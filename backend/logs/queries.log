@@ -11,3 +11,31 @@
 2025-12-19 15:10:11.588918 | factorial | True
 2025-12-19 15:11:12.554700 | palindrome | True
 2025-12-19 16:35:49.199992 | palindrome | True
+2025-12-19 18:47:45.621309 | palindrome | True
+2025-12-19 18:48:03.858824 | check if palindrome
+ | False
+2025-12-19 18:48:09.887782 | palindrome
+ | True
+2025-12-19 18:48:19.106593 | factorial
+ | False
+2025-12-19 18:48:24.512491 | factorial
+ | False
+2025-12-19 18:48:52.310812 | factorial
+ | False
+2025-12-19 18:48:53.120583 | factorial
+ | False
+2025-12-19 18:48:53.616560 | factorial
+ | False
+2025-12-19 18:48:53.846707 | factorial
+ | False
+2025-12-19 18:51:10.380250 | factorial | True
+2025-12-19 18:51:19.525570 | palindrome | True
+2025-12-19 18:51:28.100599 | factorial | True
+2025-12-19 18:51:30.935149 | factorial | True
+2025-12-19 18:51:39.416861 | palindrome | True
+2025-12-19 21:21:01.297153 | is_palindrome | False
+2025-12-19 21:21:07.228991 | palindrome | True
+2025-12-19 21:21:43.916039 | prime | True
+2025-12-19 21:23:24.455405 | palindrome | True
+2025-12-19 21:37:17.407506 | palindrome | True
+2025-12-19 21:37:29.396085 | prime | True

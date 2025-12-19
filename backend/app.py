@@ -3,6 +3,9 @@ from flask_cors import CORS
 from matcher import find_solution
 import datetime
 from auth import verify_google_token
+from database import setup_database, save_user
+
+setup_database()
 
 app = Flask(__name__)
 CORS(app)
@@ -10,7 +13,7 @@ CORS(app)
 @app.route("/query", methods=["POST"])
 def query_code():
     data = request.json
-    user_query = data.get("query", "")
+    user_query = data.get("query", "").strip()
 
     result = find_solution(user_query)
 
@@ -31,6 +34,8 @@ def google_login():
 
     if not user:
         return jsonify({"error": "Invalid token"}), 401
+
+    save_user(user)
 
     return jsonify({
         "message": "Login successful",

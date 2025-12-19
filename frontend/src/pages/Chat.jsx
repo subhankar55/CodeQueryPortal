@@ -12,17 +12,17 @@ function Chat({ user }) {
 
   return (
     <div>
-      <div>
-      <p style={{textAlign:"center"}}>Welcome, {user.name}</p>
+      <div style={{margin:"2em"}}>
+      <p style={{textAlign:"center"}}>Welcome! {user.name}</p>
       </div>
-      <textarea style={{display: "block", margin: "10px auto"}}
+      <textarea style={{display: "block", margin: "2em auto"}}
         placeholder="Enter your coding question..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
       <br />
       <button style={{display:"block", margin: "10px auto", backgroundColor: "green",boxShadow: "2px 2px 5px gray",border:"none",borderRadius: "10px",padding: "15px 15px",color: "white",}} onClick={handleSend}>Submit</button>
-      <pre style={{display: "block",margin: "10px auto"}}>{response}</pre>
+      <pre style={{display: "block",margin: "5em auto"}}>{response}</pre>
     </div>
   );
 }

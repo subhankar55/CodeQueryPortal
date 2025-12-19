@@ -1,2 +1,4 @@
 flask
 flask-cors
+google-auth
+mysql-connector-python

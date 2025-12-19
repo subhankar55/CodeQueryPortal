@@ -19,12 +19,15 @@ function Login({ onLogin }) {
 
   return (
     <>
-      <div>
-      <h2 style={{textAlign: "center"}}>Login</h2>
+      <div style={{width: "40%",backgroundColor:"gray",height:"60vh",margin:"10vh auto",border:"none",borderRadius:"10px",padding:"2em"}}>
+        <div style={{}}>
+        <h2 style={{textAlign: "center",color:"white"}}>Login</h2>
+        </div>
+        <div style={{width: "30%", margin:"5.5em auto"}}>
+        <GoogleLogin onSuccess={handleSuccess} onError={() => alert("Login Failed")} />
+        </div>
       </div>
-      <div style={{width: "20%", margin:"40px auto"}}>
-      <GoogleLogin style={{with: "40%"}} onSuccess={handleSuccess} onError={() => alert("Login Failed")} />
-      </div>
+      
     
     </>
     

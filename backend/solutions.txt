@@ -7,3 +7,72 @@ def factorial(n):
     if n == 0:
         return 1
     return n * factorial(n-1)
+
+# Check if a number is prime
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Check if a number is Armstrong
+def is_armstrong(num):
+    digits = str(num)
+    power = len(digits)
+    return num == sum(int(d)**power for d in digits)
+
+# Reverse a number
+def reverse_number(num):
+    return int(str(num)[::-1])
+
+# Check if a string is palindrome
+def is_string_palindrome(s):
+    s = s.lower().replace(" ", "")
+    return s == s[::-1]
+
+# Generate Fibonacci series of n terms
+def fibonacci(n):
+    series = []
+    a, b = 0, 1
+    for _ in range(n):
+        series.append(a)
+        a, b = b, a + b
+    return series
+
+# Find GCD of two numbers
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
+
+# Find LCM of two numbers
+def lcm(a, b):
+    return (a * b) // gcd(a, b)
+
+# Check if a number is even
+def is_even(num):
+    return num % 2 == 0
+
+# Count vowels in a string
+def count_vowels(s):
+    vowels = "aeiou"
+    return sum(1 for c in s.lower() if c in vowels)
+
+# Sum of digits of a number
+def sum_of_digits(num):
+    return sum(int(d) for d in str(abs(num)))
+
+# Check if a year is a leap year
+def is_leap_year(year):
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+
+# Find maximum in a list
+def find_max(lst):
+    max_val = lst[0]
+    for item in lst:
+        if item > max_val:
+            max_val = item
+    return max_val
+
