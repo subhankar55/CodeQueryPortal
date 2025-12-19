@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { sendQuery } from "../api";
 
-function Chat() {
+function Chat({ user }) {
   const [query, setQuery] = useState("");
   const [response, setResponse] = useState("");
 
@@ -12,6 +12,9 @@ function Chat() {
 
   return (
     <div>
+      <div>
+      <p style={{textAlign:"center"}}>Welcome, {user.name}</p>
+      </div>
       <textarea style={{display: "block", margin: "10px auto"}}
         placeholder="Enter your coding question..."
         value={query}

@@ -3,14 +3,14 @@ import Login from "./pages/Login";
 import Chat from "./pages/Chat";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
 
   return (
     <div>
-      {loggedIn ? (
-        <Chat />
+      {user ? (
+        <Chat user={user} />
       ) : (
-        <Login onLogin={() => setLoggedIn(true)} />
+        <Login onLogin={setUser} />
       )}
     </div>
   );

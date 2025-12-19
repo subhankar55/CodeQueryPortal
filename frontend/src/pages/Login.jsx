@@ -1,19 +1,33 @@
+import { GoogleLogin } from "@react-oauth/google";
+
 function Login({ onLogin }) {
-  const handleLogin = () => {
-    // For now this is a dummy login
-    // Later this will redirect to Google OAuth
-    onLogin();
+  const handleSuccess = async (credentialResponse) => {
+    const res = await fetch("http://localhost:5000/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        token: credentialResponse.credential
+      })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      onLogin(data.user);
+    }
   };
 
   return (
-    <div style={{ padding: "40px" }}>
-      <h2 style={{margin: "0 auto", textAlign: "center"}}>Code Query Portal</h2>
-      <p style={{textAlign: "center", margin: "10rm 0"}}>Please login to continue</p>
-
-      <button style={{display: "block",backgroundColor: "green",boxShadow: "2px 2px 5px gray",border:"none",color: "white",padding: "15px 15px",borderRadius: "10px" , margin: "10vh auto"}} onClick={handleLogin}>
-        Login with Google
-      </button>
-    </div>
+    <>
+      <div>
+      <h2 style={{textAlign: "center"}}>Login</h2>
+      </div>
+      <div style={{width: "20%", margin:"40px auto"}}>
+      <GoogleLogin style={{with: "40%"}} onSuccess={handleSuccess} onError={() => alert("Login Failed")} />
+      </div>
+    
+    </>
+    
   );
 }
 
