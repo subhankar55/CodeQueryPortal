@@ -1,0 +1,9 @@
+# Check if a number is palindrome
+def is_palindrome(num):
+    return str(num) == str(num)[::-1]
+
+# Find factorial of a number
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n-1)
